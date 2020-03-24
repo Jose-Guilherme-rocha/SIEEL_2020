@@ -1,4 +1,7 @@
-<div id = "saudacao">    
+<nav>    
+    
+    <img class = "header" src = "../tmp/Logo.png" alt = SIEEL >
+    
     <?php 
 
         if (isset($_SESSION["user"])){
@@ -11,12 +14,14 @@
             $login_saudacao = mysqli_fetch_assoc($login_saudacao);
             $nome = $login_saudacao["nome"];
 
-    ?>   
+    ?>  
+
         <p> Seja bem-vindo, <?php echo $nome ?> </p>
     <?php
         }
     ?>
     <p><a href="../includes/logout.php">Logout</a></p>
-    <p><a href="../includes/carrinho2.php">Carrinho de compras</a></p>
+    <p><a href="../public_html/carrinho.php">Carrinho de compras</a></p>
     
-</div>
+
+</nav>

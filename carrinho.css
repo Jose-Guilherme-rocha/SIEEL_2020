@@ -1,0 +1,76 @@
+body{
+
+    background-color: rgb(27, 27, 27) ;
+    font-family:  sans-serif;
+    color:rgb(240, 227, 227);
+    font-weight: bold;
+}
+
+.header {
+    width:12%;
+    display: flex;
+    padding: 0px;
+    float: left;
+}
+
+
+nav{
+
+    width: 100%;
+    background-color: rgb(70, 69, 69);
+    /*padding-right: 1%;*/
+    text-align: right;
+    float: right; /* tem erro aki */
+    margin-bottom: 5%;
+}
+
+a{
+    color: rgb(240, 227, 227);
+    transition: color 2s;
+    text-decoration: none;
+}
+
+a:hover{
+    color: rgb(139, 255, 116);
+} /*Algo acontece quando passa o cursor em cima dos links*/
+
+.input_box{
+    background: none;
+    color: white;
+    border: none;
+    font-weight: bold;
+    
+}
+
+
+#Botao_retirar{
+    color: white;
+    background: none;
+    border: solid greenyellow;
+    border-radius: 15px;
+    padding-left: 8px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin-top: 20px;
+    transition: 0.2s;
+    font-weight: bolder;
+}
+#Botao_retirar:hover{
+    background: greenyellow;
+    color: black;
+}
+
+#botoes{
+    text-align: center;
+}
+
+#lista_de_compra{
+    text-align: center;
+
+
+}
+
+th, td {
+    padding: 10px;
+    padding-bottom: 2px;
+}

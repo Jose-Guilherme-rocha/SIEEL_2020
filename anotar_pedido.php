@@ -1,32 +1,27 @@
-<h1>Anotar pedido</h1>
-
 <?php
 if(isset($_GET["acao"])){
-    //Adicionando produtos ao carrinho
-    if($_GET["acao"] == 'add'){
 
-        //teste
-           // echo "funciona o condicional";
-        $codigo = $_GET['id'];
+    //Adicionando produtos ao carrinho
+    if($_GET["acao"] == 'Comprar'){
+        
+        $codigo = $_GET["codigo"];
         $sessao = session_id();
         $cliente = $_SESSION["user"];
-        $qnt = 1;
+        $qnt = "1";
         
-        //Colocando as informações da compra no DB
-        $inserir = "INSERT INTO carrinho(numero da sessao, codigo_produto_evento, comprador, quantidade) VALUES ('$sessao','$codigo','$cliente',$qnt)";
-        $operacao_inserir = mysqli_query($conecta,$inserir);
-        if(!$operacao_inserir){
-            die("Erro no Banco " . mysqli_connect_errno());
-        } else{
-           echo "Deu certo?";
+        if($codigo > 1000){  //Se o código for >1000 entao é um evento, logo nao existe tamanho
+            $tamanho = "u";
+        }else{               //Se o código for <1000 é um produto, então precisamos do tamanho
+            $tamanho = $_GET["tamanho"];
         }
 
+        //Colocando as informações da compra no DB
+        $inserir_compra = "INSERT INTO pedidos(sessao,codigo,aluno,tamanho,quantidade) VALUES ('$sessao','$codigo','$cliente','$tamanho','$qnt')";     
+        $operacao_inserir_compra = mysqli_query($conecta,$inserir_compra);
+        if(!$operacao_inserir_compra){
+            die("Erro no Banco " . mysqli_connect_errno());
+        } 
     }
-
-
-
 }
-
-
 
 ?>
